@@ -11,25 +11,24 @@ def largest_number(num: list)->int:
     """
     if not isinstance(num, list):
         raise TypeError("Input must be a list")
-    for x in num:
-        if not isinstance(x,(int,float)):
-            raise TypeError(
-                f"Invalid element type: {type(x)._name_}"
-            )
+ 
 
     largest = num[0]
-    for i in num[1:]:
+    for i in num:
+        if not isinstance(i,(int,float)):
+            raise TypeError(
+                f"Invalid element type: {type(i)}"
+            )
         if i>largest:
             largest = i
     return largest
-
-if __name__ == "_main_":
+if __name__ == "__main__":
     try:
         print(largest_number([1,6.7]))
     except TypeError as t:
         print(f"An error occurred: {t}")
         # print("input must be a list")
-    except IndexError:
+    except IndexError :
         print("list must have atleast 1 element")
     except Exception as e:
         print(f"An error occurred: {e}")

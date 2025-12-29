@@ -13,7 +13,7 @@ def reverse_string(input_str : str)->str:
     for i in input_str:
         reverse = i+ reverse
     return reverse
-if __name__ == "_main_":
+if __name__ == "__main__":
     try:
         input_str = input("enter string to reverse:")
         print(reverse_string(input_str))
