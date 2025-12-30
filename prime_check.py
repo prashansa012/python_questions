@@ -10,11 +10,12 @@ def is_prime(num: int)->str:
     """
     if not isinstance(num, int):
         raise ValueError("input must be int type")
+    if num < 2:
+        return f"{num} is not a prime number"
 
     for i in range(2,num):
         if (num%i == 0):
             return (num,"is not a prime number")
-            break
     else:
         return(num,"is  a prime number")
 
