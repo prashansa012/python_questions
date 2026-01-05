@@ -11,7 +11,7 @@ def factorial(num: int)->int:
     for fact in range(1,num+1):
         result = result*fact
     return result
--6
+
 if __name__ == "__main__":
     try:
         number = int(input("enter the number to check its factorial:"))
