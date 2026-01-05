@@ -1,6 +1,9 @@
 def factorial(num: int)->int:
     """
-    
+    takes a integer from user
+    Returns the factorial of a non-negative integer.
+    Raises 
+        ValueError for invalid or negative input.
     """
     if not isinstance(num, int):
         raise ValueError("input must be int type")
