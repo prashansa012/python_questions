@@ -13,7 +13,7 @@ def is_prime(num: int)->str:
     if num < 2:
         return f"{num} is not a prime number"
 
-    for i in range(2,num):
+    for i in range(2,int(num**0.5 +1)):
         if (num%i == 0):
             return (num,"is not a prime number")
     else:
