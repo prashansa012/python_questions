@@ -1,25 +1,27 @@
-def digit_sum(num:str)->int:
+def digit_sum(num:int)->int:
     """
-    Returns the sum of a given string
+    Returns the sum of a given number
     
-    :param: takes a string as input an returns int
-    :Error handling: handles value error is the input is not string 
-    or if there is any other value then a digit inside the string
+    :param: takes a digit as input an returns int
+    :Error handling: handles value error if the input is not intiger type 
     """
-    if not isinstance(num,str) :
-        raise ValueError("input should be only string type")
-    if not all(isinstance(i, (str)) for i in num):
-        raise ValueError("input string must contain number in it")
-  
+    if not isinstance(num,int) :
+        raise ValueError("input should be only integer type")
+   
     total=0
-    for i in num:
-        total += int(i)
+    while num>0:
+        digit = num%10
+        total += digit
+        num //= 10
     return total
+
 
 if __name__ == "__main__":
     try:
-        print(digit_sum("24321"))
+        print(digit_sum(12345))
     except ValueError as v:
         print("a Value error occured:",v)
     except Exception as e:
       print("an error occurred",e)
+
+
